@@ -1,6 +1,6 @@
 # GigShield – AI Powered Parametric Insurance for Gig Workers
 
-## 🚀 Problem Statement
+##  Problem Statement
 
 Platform-based delivery workers such as food delivery, grocery delivery, and e-commerce delivery partners face frequent income loss due to external disruptions like heavy rainfall, floods, pollution, app outages, or sudden curfews.
 
@@ -12,7 +12,7 @@ This solution focuses strictly on protecting LOSS OF INCOME caused by external d
 
 ---
 
-## 🎯 Target Persona
+##  Target Persona
 
 ### Persona: Food Delivery Partner (Example – Swiggy/Zomato Rider)
 
@@ -32,7 +32,7 @@ This solution focuses strictly on protecting LOSS OF INCOME caused by external d
 
 ---
 
-## 🧠 Solution Overview
+##  Solution Overview
 
 GigShield is an AI-powered parametric insurance platform that:
 
@@ -45,7 +45,7 @@ GigShield is an AI-powered parametric insurance platform that:
 
 ---
 
-## ⚙️ Application Workflow
+##  Application Workflow
 
 1. Worker Registration & Onboarding
 2. Risk Profiling based on delivery location
@@ -58,7 +58,7 @@ GigShield is an AI-powered parametric insurance platform that:
 
 ---
 
-## 💰 Weekly Premium Pricing Model
+##  Weekly Premium Pricing Model
 
 GigShield follows a simple **Weekly Premium Model** aligned with gig worker earning cycles.
 
@@ -74,7 +74,7 @@ Premium is dynamically adjusted using AI risk prediction models.
 
 ---
 
-## ⚡ Parametric Claim Triggers
+##  Parametric Claim Triggers
 
 Claims are automatically triggered when predefined conditions are met.
 
@@ -92,7 +92,7 @@ Claims are automatically triggered when predefined conditions are met.
 
 ---
 
-## 🤖 AI / ML Integration Plan
+##  AI / ML Integration Plan
 
 AI is used in three key modules:
 
@@ -115,7 +115,7 @@ AI is used in three key modules:
 
 ---
 
-## 🔗 External Integrations
+##  External Integrations
 
 - Weather API (OpenWeather / Mock API)
 - Traffic Data API (Simulated)
@@ -124,7 +124,7 @@ AI is used in three key modules:
 
 ---
 
-## 📊 Dashboard Features
+##  Dashboard Features
 
 ### Worker Dashboard
 - Active weekly coverage
@@ -140,7 +140,7 @@ AI is used in three key modules:
 
 ---
 
-## 🛠️ Proposed Tech Stack
+##  Proposed Tech Stack
 
 ### Frontend
 - ReactJS / Flutter (Mobile First Design)
@@ -160,7 +160,7 @@ AI is used in three key modules:
 
 ---
 
-## 📅 Development Plan (Phase Wise)
+##  Development Plan (Phase Wise)
 
 ### Phase 1
 - Ideation
@@ -182,7 +182,7 @@ AI is used in three key modules:
 
 ---
 
-## 🌟 Innovation Highlights
+##  Innovation Highlights
 
 - Fully automated zero-touch insurance claims
 - Weekly flexible micro-insurance model
@@ -192,7 +192,7 @@ AI is used in three key modules:
 
 ---
 
-## 📌 Future Scope
+##  Future Scope
 
 - Multi-platform worker coverage
 - Gamified insurance rewards
@@ -202,15 +202,6 @@ AI is used in three key modules:
 
 ---
 
-## 👥 Team
 
-- Member 1 – Frontend Development
-- Member 2 – Backend Development
-- Member 3 – AI / ML
-- Member 4 – Integration & Testing
 
----
 
-## 🎥 Demo Video Link
-
-(To be added)
