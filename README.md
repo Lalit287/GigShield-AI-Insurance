@@ -1,207 +1,211 @@
-# GigShield – AI Powered Parametric Insurance for Gig Workers
+# GigShield – AI Powered Parametric Income Insurance for Gig Workers
 
-##  Problem Statement
+##  Problem Overview
 
-Platform-based delivery workers such as food delivery, grocery delivery, and e-commerce delivery partners face frequent income loss due to external disruptions like heavy rainfall, floods, pollution, app outages, or sudden curfews.
+India’s gig economy delivery partners (food, grocery, e-commerce) frequently face income loss due to uncontrollable external disruptions such as heavy rainfall, floods, pollution spikes, curfews, and platform outages.
 
-Currently, there is no dedicated income protection solution for gig workers. When such disruptions occur, workers lose their daily earnings without any financial safety net.
+These disruptions can reduce their working hours and result in significant weekly income reduction. Currently, there is no dedicated insurance solution that protects gig workers from such income loss.
 
-GigShield aims to solve this problem by building an AI-enabled parametric insurance platform that provides automatic income protection coverage with instant claim payouts.
+GigShield is an AI-powered parametric insurance platform designed to provide automatic income protection coverage with real-time claim triggering and instant payout simulation.
 
-This solution focuses strictly on protecting LOSS OF INCOME caused by external disruptions and does not cover vehicle damage, health insurance, or accident-related expenses.
+This solution strictly focuses on **income protection only** and excludes health, accident, or vehicle repair coverage.
 
 ---
 
 ##  Target Persona
 
-### Persona: Food Delivery Partner (Example – Swiggy/Zomato Rider)
+### Food Delivery Partner (Swiggy / Zomato)
 
-**Profile**
-- Age: 22–35
-- Works 8–10 hours daily
-- Weekly earnings: ₹5,000 – ₹8,000
-- Dependent on weather and traffic conditions
+* Age Group: 20–35
+* Working Hours: 8–10 hours per day
+* Earnings Pattern: Daily / Weekly dependent
+* Operating Environment: Outdoor deliveries affected by weather and traffic
 
-### Scenario Example
+### Real-Life Scenario
 
-1. Rider starts shift at 10 AM.
-2. Heavy rainfall begins → deliveries reduce drastically.
-3. Rider loses 4 hours of working time → income loss.
-4. GigShield detects rainfall threshold breach.
-5. Claim is auto-triggered → instant payout is credited.
+1. Delivery partner starts shift at 11 AM
+2. Heavy rainfall begins → order demand drops → travel becomes unsafe
+3. Worker loses 3–4 hours of productive delivery time
+4. GigShield detects rainfall threshold breach via Weather API
+5. Parametric trigger activates → automatic claim approval
+6. Simulated instant payout credited to worker wallet
 
 ---
 
 ##  Solution Overview
 
-GigShield is an AI-powered parametric insurance platform that:
+GigShield platform enables:
 
-- Assesses delivery zone risk using AI models
-- Calculates dynamic weekly premium
-- Monitors real-time disruption triggers
-- Automatically initiates claims
-- Provides instant payout to workers
-- Prevents fraudulent claims using anomaly detection
+* AI-based hyper-local risk profiling
+* Dynamic weekly premium calculation
+* Automated parametric claim triggering
+* Fraud detection through anomaly analysis
+* Real-time disruption monitoring
+* Instant payout simulation
+* Worker & Admin analytics dashboards
 
 ---
 
 ##  Application Workflow
 
-1. Worker Registration & Onboarding
-2. Risk Profiling based on delivery location
-3. Weekly Premium Calculation
+1. User Registration & Persona Selection
+2. Delivery Zone Risk Assessment
+3. Weekly Premium Recommendation
 4. Policy Activation
-5. Real-Time Disruption Monitoring
-6. Automatic Claim Trigger
-7. Instant Payout Processing
-8. Dashboard Analytics for worker & admin
+5. Real-Time Monitoring of Disruption Triggers
+6. Automatic Claim Initiation
+7. Instant Payout Simulation
+8. Dashboard Insights
 
 ---
 
 ##  Weekly Premium Pricing Model
 
-GigShield follows a simple **Weekly Premium Model** aligned with gig worker earning cycles.
+Premium pricing is aligned with gig workers’ weekly earning cycle.
 
-### Example Pricing Logic
+| Risk Level  | Zone Type                     | Weekly Premium |
+| ----------- | ----------------------------- | -------------- |
+| Low Risk    | Stable Weather / Low Traffic  | ₹20            |
+| Medium Risk | Moderate Rain / Congestion    | ₹35            |
+| High Risk   | Flood / Severe Pollution Zone | ₹50            |
 
-| Risk Level | Area Type | Weekly Premium |
-|-----------|-----------|---------------|
-| Low Risk | Safe Zone | ₹20 |
-| Medium Risk | Moderate Rain / Traffic | ₹35 |
-| High Risk | Flood/Extreme Pollution Zone | ₹50 |
+Premium is dynamically adjusted using AI risk prediction models based on:
 
-Premium is dynamically adjusted using AI risk prediction models.
+* Historical weather patterns
+* Delivery activity density
+* Seasonal disruption probability
+* Hyper-local risk score
 
 ---
 
 ##  Parametric Claim Triggers
 
-Claims are automatically triggered when predefined conditions are met.
+Claims are automatically triggered when predefined external disruption thresholds are crossed.
 
 ### Environmental Triggers
-- Rainfall > 50mm
-- Temperature > 42°C
-- AQI > 300
-- Flood alerts
+
+* Rainfall > 50 mm
+* AQI > 300
+* Temperature > 42°C
+* Flood alerts
 
 ### Social / Platform Triggers
-- Curfew announcements
-- Delivery zone closures
-- Platform server outage (mock API)
-- Traffic congestion beyond threshold
+
+* Curfew announcements
+* Market / zone closures
+* Platform server outage (mock API)
+* Extreme traffic congestion
 
 ---
 
 ##  AI / ML Integration Plan
 
-AI is used in three key modules:
-
 ### 1. Risk Prediction Model
-- Uses historical weather & delivery data
-- Predicts probability of income disruption
-- Helps in premium personalization
+
+* Uses historical environmental and activity datasets
+* Predicts probability of income disruption
+* Generates zone risk score
 
 ### 2. Dynamic Premium Engine
-- Adjusts premium weekly based on:
-  - Zone risk score
-  - Worker activity pattern
-  - Seasonal disruption trends
+
+* Adjusts weekly premium using predicted disruption likelihood
+* Offers personalized coverage
 
 ### 3. Fraud Detection System
-- Detects GPS spoofing
-- Identifies duplicate claims
-- Validates worker activity logs
-- Flags anomaly patterns in claims
 
----
-
-##  External Integrations
-
-- Weather API (OpenWeather / Mock API)
-- Traffic Data API (Simulated)
-- Platform Data API (Mock Swiggy/Zomato server status)
-- Payment Gateway Sandbox (Razorpay / Stripe test mode)
+* Detects GPS spoofing patterns
+* Identifies duplicate claims
+* Validates delivery activity logs
+* Flags abnormal claim frequency
 
 ---
 
 ##  Dashboard Features
 
 ### Worker Dashboard
-- Active weekly coverage
-- Earnings protected
-- Claim history
-- Risk score
+
+* Active weekly coverage
+* Risk score visualization
+* Earnings protected summary
+* Claim history
 
 ### Admin Dashboard
-- Total policies issued
-- Claim frequency analytics
-- Loss ratio insights
-- Risk heatmap by zones
+
+* Policy distribution analytics
+* Claim frequency trends
+* Zone-wise risk heatmap
+* Predicted disruption insights
 
 ---
 
-##  Proposed Tech Stack
+##  Technology Stack
 
 ### Frontend
-- ReactJS / Flutter (Mobile First Design)
+
+* React.js
+* Tailwind CSS
 
 ### Backend
-- NodeJS / Spring Boot
+
+* Node.js
+* Express.js
 
 ### Database
-- MongoDB / MySQL
 
-### AI / ML
-- Python
-- Scikit-Learn / TensorFlow
+* MongoDB Atlas
 
-### Cloud
-- AWS / Azure (Free Tier)
+### AI Layer
+
+* Python
+* Scikit-learn
+* FastAPI
+
+### External APIs
+
+* OpenWeather API
+* Mock Traffic API
+* Mock Delivery Platform API
+* Razorpay Sandbox (Payout Simulation)
+
+### Deployment
+
+* Vercel (Frontend)
+* Render / Railway (Backend & AI Service)
 
 ---
 
-##  Development Plan (Phase Wise)
+##  Platform Choice Justification
 
-### Phase 1
-- Ideation
-- UI Wireframes
-- Risk logic design
-- AI model planning
+A **Responsive Web Application** is selected because:
 
-### Phase 2
-- User onboarding module
-- Premium calculation engine
-- Claim automation
-- API integration
+* Faster MVP development within hackathon timeline
+* Easy accessibility for judges via browser link
+* Better visualization for analytics dashboards
+* Simplified API testing and deployment
 
-### Phase 3
-- Advanced fraud detection
-- Instant payout simulation
-- Analytics dashboard
-- Final optimization
+Future scope includes Mobile App version for real-time tracking and notifications.
+
+
 
 ---
 
 ##  Innovation Highlights
 
-- Fully automated zero-touch insurance claims
-- Weekly flexible micro-insurance model
-- AI powered hyper-local risk pricing
-- Income protection instead of traditional asset insurance
-- Real-time disruption intelligence engine
+* Zero-touch automated insurance claims
+* Weekly micro-insurance pricing model
+* Hyper-local AI risk prediction
+* Real-time disruption intelligence
+* Income protection focused design
 
 ---
 
 ##  Future Scope
 
-- Multi-platform worker coverage
-- Gamified insurance rewards
-- Community risk pooling
-- Predictive earnings planner
-- Government scheme integration
+* Mobile application support
+* Gamified safe-delivery rewards
+* Community risk pooling
+* Earnings prediction assistant
+* Government scheme integrations
 
 ---
-
-
-
 
