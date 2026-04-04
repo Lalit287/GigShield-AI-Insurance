@@ -283,7 +283,7 @@ const Background = ({ theme }) => {
 const AuthPage = ({ onLogin, addToast, theme, setTheme }) => {
     const C = theme;
     const [mode, setMode] = useState("login");
-    const [form, setForm] = useState({ name: "", email: "", password: "", zone: "Hyderabad Central" });
+    const [form, setForm] = useState({ name: "", email: "", password: "", zone: "" });
     const [loading, setLoading] = useState(false);
     const handle = async () => {
         setLoading(true);
@@ -310,6 +310,16 @@ const AuthPage = ({ onLogin, addToast, theme, setTheme }) => {
                 </div>
                 {mode === "register" && <input placeholder="Name" onChange={e => setForm({...form, name: e.target.value})} style={{ width: "100%", padding: 12, marginBottom: 12, background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.textPrimary }} />}
                 <input placeholder="Email" onChange={e => setForm({...form, email: e.target.value})} style={{ width: "100%", padding: 12, marginBottom: 12, background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.textPrimary }} />
+                {mode === "register" && (
+                    <select 
+                        value={form.zone} 
+                        onChange={e => setForm({...form, zone: e.target.value})}
+                        style={{ width: "100%", padding: 12, marginBottom: 12, background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.textPrimary }}
+                    >
+                        <option value="" disabled>Select Operational Zone</option>
+                        {ZONES.map(z => <option key={z.name} value={z.name}>{z.name}</option>)}
+                    </select>
+                )}
                 <input type="password" placeholder="Password" onChange={e => setForm({...form, password: e.target.value})} style={{ width: "100%", padding: 12, marginBottom: 24, background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, color: C.textPrimary }} />
                 <button onClick={handle} style={{ width: "100%", padding: 14, background: C.cyan, color: C.bg, borderRadius: 8, border: "none", fontWeight: 700 }}>{loading ? "..." : mode.toUpperCase()}</button>
             </div>

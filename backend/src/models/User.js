@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema(
     zone: {
       type: String,
       enum: ['Hyderabad Central', 'Secunderabad', 'Begumpet', 'Bannerghatta', 'Whitefield'],
-      default: 'Hyderabad Central',
+      required: [true, 'Please select your operational zone'],
     },
     riskLevel: {
       type: String,

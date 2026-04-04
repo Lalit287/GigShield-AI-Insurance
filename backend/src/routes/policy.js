@@ -12,8 +12,8 @@ const router = express.Router();
 router.post('/create', authMiddleware, PolicyController.createPolicy);
 
 // Get policies
-router.get('/:userId?', authMiddleware, PolicyController.getUserPolicies);
 router.get('/active/:userId?', authMiddleware, PolicyController.getActivePolicy);
+router.get('/:userId?', authMiddleware, PolicyController.getUserPolicies);
 
 // Cancel policy
 router.put('/:policyId/cancel', authMiddleware, PolicyController.cancelPolicy);

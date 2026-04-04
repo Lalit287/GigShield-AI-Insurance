@@ -32,12 +32,19 @@ class AuthController {
       }
 
       // Create new user
+      if (!zone) {
+        return res.status(400).json({
+          success: false,
+          message: 'Operational zone is required',
+        });
+      }
+
       const user = new User({
         name,
         email,
         password,
         phone,
-        zone: zone || 'Hyderabad Central',
+        zone,
         role: role || 'worker',
       });
 
@@ -228,13 +235,16 @@ class AuthController {
    * Helper: Generate JWT token
    */
   static generateToken(user) {
+    if (!process.env.JWT_SECRET) {
+      console.warn('⚠️ WARNING: JWT_SECRET not found in environment variables. Using a fallback for development only.');
+    }
     return jwt.sign(
       {
         id: user._id,
         email: user.email,
         role: user.role,
       },
-      process.env.JWT_SECRET || 'default-secret',
+      process.env.JWT_SECRET || 'dev-secret-key-replace-in-prod',
       {
         expiresIn: process.env.JWT_EXPIRE || '7d',
       }

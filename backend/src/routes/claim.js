@@ -13,8 +13,8 @@ router.post('/auto', authMiddleware, ClaimController.autoProcessClaim);
 router.post('/manual', authMiddleware, ClaimController.createManualClaim);
 
 // Get claims
-router.get('/:claimId', authMiddleware, ClaimController.getClaimDetails);
 router.get('/user/:userId?', authMiddleware, ClaimController.getUserClaims);
+router.get('/:claimId', authMiddleware, ClaimController.getClaimDetails);
 
 // Admin routes
 router.put('/:claimId/approve', authMiddleware, authorize('admin'), ClaimController.approveClaim);
