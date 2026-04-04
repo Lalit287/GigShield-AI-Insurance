@@ -1,22 +1,13 @@
 {
   "version": 2,
-  "name": "gigshield",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+  "experimentalServices": {
+    "frontend": {
+      "rootDirectory": "frontend",
+      "framework": "vite"
     },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+    "backend": {
+      "entrypoint": "backend/server.js",
+      "routePrefix": "/api"
     }
-  ],
-  "functions": {
-    "api/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  }
 }
