@@ -310,7 +310,7 @@ const AuthPage = ({ onLogin, addToast, theme = THEMES.dark, setTheme }) => {
     setErr(""); setLoading(true);
     
     try {
-      const endpoint = mode === "login" ? "http://localhost:5000/api/auth/login" : "http://localhost:5000/api/auth/register";
+      const endpoint = mode === "login" ? "http://localhost:5001/api/auth/login" : "http://localhost:5001/api/auth/register";
       const payload = mode === "login" 
         ? { email: form.email, password: form.password }
         : { name: form.name, email: form.email, password: form.password, zone: form.zone || "Hyderabad Central", role: "worker" };
