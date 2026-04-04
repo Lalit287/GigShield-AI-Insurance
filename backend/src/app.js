@@ -25,11 +25,17 @@ const app = express();
 // Security headers
 app.use(helmet());
 
-// CORS
+// CORS Configuration
+const allowedOrigins = process.env.NODE_ENV === 'production' 
+  ? '*' // Temporarily allow all for production debugging
+  : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'http://localhost:5001'];
+
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'],
+    origin: allowedOrigins,
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
   })
 );
 

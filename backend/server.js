@@ -32,7 +32,13 @@ const startServer = async () => {
       `);
     });
   } catch (error) {
-    console.error('❌ Failed to start server:', error.message);
+    console.error(`
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ FAILED TO START SERVER
+📍 Error: ${error.message}
+⚠️  Check MONGODB_URI and IP Whitelist (0.0.0.0/0)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    `);
     process.exit(1);
   }
 };
