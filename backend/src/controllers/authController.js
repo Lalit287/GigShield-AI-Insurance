@@ -44,7 +44,7 @@ class AuthController {
       await user.save();
 
       // Generate token
-      const token = this.generateToken(user);
+      const token = AuthController.generateToken(user);
 
       return res.status(201).json({
         success: true,
@@ -106,7 +106,7 @@ class AuthController {
       await user.save();
 
       // Generate token
-      const token = this.generateToken(user);
+      const token = AuthController.generateToken(user);
 
       return res.status(200).json({
         success: true,
@@ -192,7 +192,7 @@ class AuthController {
         });
       }
 
-      const token = this.generateToken(user);
+      const token = AuthController.generateToken(user);
 
       return res.status(200).json({
         success: true,
@@ -201,6 +201,23 @@ class AuthController {
           token,
           expiresIn: process.env.JWT_EXPIRE || '7d',
         },
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  /**
+   * GET /workers
+   * Admin: List all registered workers
+   */
+  static async getWorkers(req, res, next) {
+    try {
+      const workers = await User.find({ role: 'worker' }).select('-password');
+      return res.status(200).json({
+        success: true,
+        count: workers.length,
+        data: workers,
       });
     } catch (error) {
       next(error);
