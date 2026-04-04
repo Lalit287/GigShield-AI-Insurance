@@ -2,7 +2,7 @@
   "version": 2,
   "experimentalServices": {
     "frontend": {
-      "rootDirectory": "frontend",
+      "entrypoint": "frontend",
       "framework": "vite"
     },
     "backend": {
