@@ -288,7 +288,7 @@ const AuthPage = ({ onLogin, addToast, theme, setTheme }) => {
     const handle = async () => {
         setLoading(true);
         try {
-            const res = await fetch(`http://localhost:5001/api/auth/${mode}`, {
+            const res = await fetch(`/api/auth/${mode}`, {
                 method: "POST", headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form)
             });
@@ -407,7 +407,7 @@ const AdminDashboard = ({ onLogout, addToast, theme, setTheme }) => {
     const [tab, setTab] = useState("overview");
     useEffect(() => {
         const fetchW = async () => {
-            const res = await fetch(`http://localhost:5001/api/auth/workers`, { headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` } });
+            const res = await fetch(`/api/auth/workers`, { headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` } });
             const data = await res.json(); if (data.success) setWorkers(data.data);
         }; fetchW();
     }, []);
@@ -463,9 +463,9 @@ export default function App() {
 
   const loadData = async (u) => {
     const token = localStorage.getItem('token');
-    const pRes = await fetch(`http://localhost:5001/api/policy/active`, { headers: { "Authorization": `Bearer ${token}` } });
+    const pRes = await fetch(`/api/policy/active`, { headers: { "Authorization": `Bearer ${token}` } });
     const pData = await pRes.json(); if (pData.success) setPolicy(pData.data);
-    const cRes = await fetch(`http://localhost:5001/api/claim/user`, { headers: { "Authorization": `Bearer ${token}` } });
+    const cRes = await fetch(`/api/claim/user`, { headers: { "Authorization": `Bearer ${token}` } });
     const cData = await cRes.json(); if (cData.success) setClaims(cData.data.map(c => ({ id: c._id, trigger: c.triggerType, zone: c.zone, amount: c.amount, status: c.status })));
   };
 
@@ -475,7 +475,7 @@ export default function App() {
   };
 
   const handleClaim = async (trig) => {
-      const res = await fetch(`http://localhost:5001/api/claim/auto`, {
+      const res = await fetch(`/api/claim/auto`, {
           method: "POST", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${localStorage.getItem('token')}` },
           body: JSON.stringify({ triggerType: trig.type === 'rain' ? 'rainfall' : trig.type, zone: user.zone, triggerValue: 60, gpsData: { lat: 0, lng: 0 } })
       });
@@ -487,7 +487,7 @@ export default function App() {
   };
 
   const handleCreatePolicy = async (t) => {
-      const res = await fetch(`http://localhost:5001/api/policy/create`, {
+      const res = await fetch(`/api/policy/create`, {
           method: "POST", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${localStorage.getItem('token')}` },
           body: JSON.stringify({ level: t.level.toLowerCase(), zone: user.zone })
       });
